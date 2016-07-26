@@ -14,15 +14,11 @@ else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-ifeq ($(TARGET_PREBUILT_DTIMAGE),)
-	LOCAL_DTIMAGE := device/tcl/miata3g/dt.img
-else
-	LOCAL_DTIMAGE := $(TARGET_PREBUILT_DTIMAGE)
-endif
+LOCAL_KERNEL_DT := device/tcl/miata3g/dt.img
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
-    $(LOCAL_DTIMAGE):dt.img
+    $(LOCAL_KERNEL_DT):dt.img
 
 $(call inherit-product, build/target/product/full.mk)
 
